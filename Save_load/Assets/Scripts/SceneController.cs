@@ -37,6 +37,17 @@ public class SceneController : MonoBehaviour {
         }        
     }
 
+    public void LoadSelectedScene(int sceneIndex)
+    {
+        SceneManager.LoadScene(sceneIndex);
+        print("loading " + (sceneIndex));
+    }
+
+    public int GetSceneIndex()
+    {
+        return SceneManager.GetActiveScene().buildIndex;
+    }
+
     private void OnGUI() {
         GUIStyle style = new GUIStyle();
         style.fontSize = 56;

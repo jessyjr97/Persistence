@@ -8,6 +8,7 @@ using System;
 public class GameController : MonoBehaviour {
     public static GameController control;
 
+
     public int Attack;
     public int Defense;
     public int Health;
@@ -66,6 +67,7 @@ public class GameController : MonoBehaviour {
         data.health = Health;
         data.attack = Attack;
         data.defense = Defense;
+        data.scene = SceneController.sceneControl.GetSceneIndex();
         BinaryFormatter bf = new BinaryFormatter();
         bf.Serialize(file, data);
         file.Close();
@@ -84,6 +86,7 @@ public class GameController : MonoBehaviour {
         Health = data.health;
         Attack = data.attack;
         Defense = data.defense;
+        SceneController.sceneControl.LoadSelectedScene(data.scene);
         file.Close();
     }
 }
@@ -94,4 +97,5 @@ class PlayerData
     public int health;
     public int attack;
     public int defense;
+    public int scene;
 }
