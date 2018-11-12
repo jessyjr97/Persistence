@@ -25,8 +25,7 @@ public class SceneController : MonoBehaviour {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         } else {
             print("This is the last scene");
-        }
-        
+        }        
     }
 
     public void PreviousScene() {
@@ -35,14 +34,13 @@ public class SceneController : MonoBehaviour {
             print("loading " + (SceneManager.GetActiveScene().buildIndex -1 ));
         } else {
             print("This is the first scene");
-        }
-        
+        }        
     }
+
     private void OnGUI() {
         GUIStyle style = new GUIStyle();
         style.fontSize = 56;
         GUI.Label(new Rect(10, 10, 180, 80), "Active scene index : "  + SceneManager.GetActiveScene().buildIndex, style);
-    }
-   
+    }  
 
 }
